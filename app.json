@@ -1,5 +1,5 @@
 {
-  "name": "Twitter Direct Message Boilerplate",
+  "name": "Twitter Webhook Boilerplate",
   "description": "A barebones Node.js app using Express 4 for Twitter DMs and webhooks.",
   "repository": "",
   "logo": "",

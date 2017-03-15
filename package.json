@@ -1,5 +1,5 @@
 {
-  "name": "twitter-dm-boilerplate-node",
+  "name": "twitter-webhook-boilerplate-node",
   "version": "0.2.5",
   "description": "",
   "engines": {
