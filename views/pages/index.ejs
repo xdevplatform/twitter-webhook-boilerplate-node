@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <div class="panel panel-default">
+      <div class="panel-heading" class="panel-title"><h1>CRC Response Tester</h1></div>
+      <div class="panel-body">
+        <p>This test will check the following:</p>
+        <ul>
+          <li>JSON format</li>
+          <li>Latency</li>
+          <li>Generated response token</li>
+        </ul>
+
+        <p>The following is <strong>not</strong> in scope of this test:</p>
+        <ul>
+          <li>Use of correct app consumer secret</li>
+          <li>Secuirty requirements</li>
+          <li>API access</li>
+        </ul>
+        <div class="well well-sm">
+          See <a href="https://github.com/twitterdev/preview-docs_dm-v2-api/blob/master/webhooks.rst" target="_blank">webhook documentation</a> for CRC specifications. Code examples available <a href="https://github.com/twitterdev/preview-docs_dm-v2-api/tree/master/examples" target="_blank">on Github.</a>
+        </div>
+        <div class="form-group">
+          <label for="webhook-url-input">Webhook URL</label>
+          <input type="url" class="form-control" id="webhook-url-input" placeholder="https://">
+        </div>
+        <div class="form-group">
+          <label for="consumer-secret-input">App Consumer Secret*</label>
+          <input type="text" class="form-control" id="consumer-secret-input" placeholder="Found on apps.twitter.com">
+        </div>
+        
+        <div>
+          <a class="btn btn-primary" id="text-btn">Test</a>
+        </div>
+
+      </div>
+      <div class="panel-footer"><small>*App consumer secret will not be saved.</small></div>
+    </div>
+
+    <div id="alert-error" class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <strong>Error:</strong> <span id="error-msg"></span>
+    </div>
+
+    <div id="alert-success" class="alert alert-success" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <strong>Success!</strong> CRC response is valid.</span>
+    </div>
+  </div>
+
+  <script src="/javascript/main.js"></script>
+</body>
+</html>

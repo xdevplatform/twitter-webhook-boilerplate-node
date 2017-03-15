@@ -1,0 +1,8 @@
+{
+  "name": "Twitter Direct Message Boilerplate",
+  "description": "A barebones Node.js app using Express 4 for Twitter DMs and webhooks.",
+  "repository": "",
+  "logo": "",
+  "keywords": ["node", "express", "static"],
+  "image": ""
+}
