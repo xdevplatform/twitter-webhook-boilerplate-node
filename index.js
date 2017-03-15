@@ -56,7 +56,7 @@ app.get('/webhooks/twitter', function(request, response) {
 /**
  * Receives DM events
  **/
-app.post('/webhook/twitter', function(request, response) {
+app.post('/webhooks/twitter', function(request, response) {
 
   console.log(request.body)
 
