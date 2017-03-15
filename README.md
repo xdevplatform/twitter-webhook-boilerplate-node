@@ -1,3 +1,3 @@
-# Webhook CRC Tester
+# Twitter Webhook Boilerplate Node
 
-https://crc-response-generator.herokuapp.com/
+
