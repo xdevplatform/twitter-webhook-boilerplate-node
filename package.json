@@ -1,5 +1,5 @@
 {
-  "name": "Twitter DM Boilerplate",
+  "name": "twitter-dm-boilerplate-node",
   "version": "0.2.5",
   "description": "",
   "engines": {
@@ -14,8 +14,7 @@
     "ejs": "2.4.1",
     "express": "4.13.3",
     "nconf": "^0.8.4",
-    "request": "^2.79.0",
-    "uuid": "^3.0.1"
+    "request": "^2.79.0"
   },
   "repository": {
     "type": "git",
