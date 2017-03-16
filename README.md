@@ -11,24 +11,28 @@ Starter web app for consuming events via Account Activity API.
 ## Setup & running the app
 
 1. Clone this repository:
-
-    `git clone https://github.com/twitterdev/twitter-webhook-boilerplate-node.git`
+```
+git clone https://github.com/twitterdev/twitter-webhook-boilerplate-node.git
+```
 
 2. Install Node.js dependencies:
-
-   `npm install`
+```
+npm install
+```
 
 3. Create a `config.json` based on `config.sample.json` and fill in the Twitter keys and tokens.
 
 4. Init Heroku app.
+```
+heroku create
+``` 
 
-   `heroku create`
-   
 5. Run locally.
-
-   `heroku local`
+```
+heroku local
+```
 
 6. Deploy to Heroku.
-
-   `git push heroku master`
-
+```
+git push heroku master
+```
