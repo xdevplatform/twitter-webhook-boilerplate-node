@@ -36,3 +36,12 @@ heroku local
 ```
 git push heroku master
 ```
+
+## Scripts
+
+The example scripts in the `example_scripts` directory perform the following actions:
+
+* Send Direct Messages
+* Create and delete @user subscriptions
+* Create Welcome Messages and deeplinks
+* Create and delete default Welcome Messages
