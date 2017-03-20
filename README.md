@@ -37,7 +37,7 @@ heroku local
 git push heroku master
 ```
 
-## Scripts
+## Example Scripts
 
 The example scripts in the [example_scripts](/example_scripts) directory perform the following actions:
 
