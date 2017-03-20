@@ -71,11 +71,14 @@ twitter.post('direct_messages/welcome_messages/new', dm_params, function (error,
       return;
     }
 
-    // get welcome message ID
+    // get the user ID
     var user_id = data.id_str;
 
     // construct deeplink to welcome message
     console.log('Welcome Message Deeplink:', 'https://twitter.com/messages/compose?recipient_id=' + user_id + '&welcome_message_id=' + welcome_message_id)
+    
+    callback();
   });
   
 });
+
