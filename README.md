@@ -5,7 +5,7 @@ Starter web app for consuming events via Account Activity API.
 ## Dependencies
 
 * [Node.js](https://nodejs.org)
-* [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+* [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) (optional)
 
 
 ## Setup & running the app
@@ -22,17 +22,27 @@ npm install
 
 3. Create a `config.json` based on `config.sample.json` and fill in the Twitter keys and tokens.
 
-4. Init Heroku app.
+4. Run locally
+```
+node index
+```
+
+## Deploy to Heroku (optional)
+
+1. Init Heroku app.
 ```
 heroku create
 ``` 
 
-5. Run locally.
+2. Run locally.
 ```
 heroku local
 ```
+3. Confgirue environment variables
+Set up an environment variable for evey propertey on config.json.
+See Heroku doucmentations on [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars).
 
-6. Deploy to Heroku.
+4. Deploy to Heroku.
 ```
 git push heroku master
 ```
