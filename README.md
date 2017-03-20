@@ -39,7 +39,7 @@ git push heroku master
 
 ## Scripts
 
-The example scripts in the `example_scripts` directory perform the following actions:
+The example scripts in the [example_scripts](/example_scripts) directory perform the following actions:
 
 * Send Direct Messages
 * Create and delete @user subscriptions
