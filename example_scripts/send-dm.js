@@ -1,5 +1,5 @@
 var nconf = require('nconf')
-var request = require("request")
+var request = require('request')
 
 
 // load config
@@ -59,7 +59,7 @@ var request_options = {
   oauth: twitter_oauth,
   json: true,
   headers: {
-    "content-type": "application/json"
+    'content-type': 'application/json'
   },
   body: dm_params
 }

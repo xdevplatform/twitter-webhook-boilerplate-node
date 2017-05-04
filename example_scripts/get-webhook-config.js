@@ -13,21 +13,14 @@ var twitter_oauth = {
   token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
 }
 
-var WEBHOOK_ID = 'your-webhook-id'
-
 
 // request options
 var request_options = {
-  url: 'https://api.twitter.com/1.1/account_activity/webhooks/' + WEBHOOK_ID + '/subscriptions.json',
+  url: 'https://api.twitter.com/1.1/account_activity/webhooks.json',
   oauth: twitter_oauth
 }
 
-// POST request to create webhook config
-request.post(request_options, function (error, response, body) {
-
-  if (response.statusCode == 204) {
-    console.log('Subscription added.');
-  } else {
-    console.log('User has not authorized your app.')
-  }
+// GET request to retreive webhook config
+request.get(request_options, function (error, response, body) {
+  console.log(body)
 })

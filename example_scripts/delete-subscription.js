@@ -1,28 +1,33 @@
-var nconf = require('nconf');
-var Twit = require('twit');
+var nconf = require('nconf')
+var request = require('request')
 
 
 // load config
-nconf.file({ file: 'config.json' }).env();
+nconf.file({ file: 'config.json' }).env()
 
-// setup Twitter API client
-var twitter_config = {
+// twitter authentication
+var twitter_oauth = {
   consumer_key: nconf.get('TWITTER_CONSUMER_KEY'),
   consumer_secret: nconf.get('TWITTER_CONSUMER_SECRET'),
-  access_token: nconf.get('TWITTER_ACCESS_TOKEN'),
-  access_token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
-};
-var twitter = new Twit(twitter_config);
+  token: nconf.get('TWITTER_ACCESS_TOKEN'),
+  token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
+}
 
 var WEBHOOK_ID = 'your-webhook-id'
 
 
-twitter.del('webhooks/subscriptions/direct_messages', { webhook_id: WEBHOOK_ID }, function (error, data, response) {
+// request options
+var request_options = {
+  url: 'https://api.twitter.com/1.1/account_activity/webhooks/' + WEBHOOK_ID + '/subscriptions.json',
+  oauth: twitter_oauth
+}
+
+// POST request to create webhook config
+request.delete(request_options, function (error, response, body) {
 
   if (response.statusCode == 204) {
     console.log('Subscription removed.');
   } else {
     console.log('User has not authorized your app or subscription not found.')
   }
-
-});
+})
