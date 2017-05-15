@@ -1,21 +1,20 @@
-var nconf = require('nconf');
-var Twit = require('twit');
+var nconf = require('nconf')
+var request = require("request")
 
 
 // load config
-nconf.file({ file: 'config.json' }).env();
+nconf.file({ file: 'config.json' }).env()
 
-// setup Twitter API client
-var twitter_config = {
+// twitter authentication
+var twitter_oauth = {
   consumer_key: nconf.get('TWITTER_CONSUMER_KEY'),
   consumer_secret: nconf.get('TWITTER_CONSUMER_SECRET'),
-  access_token: nconf.get('TWITTER_ACCESS_TOKEN'),
-  access_token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
-};
-var twitter = new Twit(twitter_config);
+  token: nconf.get('TWITTER_ACCESS_TOKEN'),
+  token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
+}
 
-
-var dm_params = {
+// welcome message request body
+var wm_params = {
   "welcome_message": {
     "message_data": {
       "text": "Hi! What can I help you with today?",
@@ -48,37 +47,55 @@ var dm_params = {
   }
 }
 
-// create new welcome message
-twitter.post('direct_messages/welcome_messages/new', dm_params, function (error, data, response) {
+// request options
+var request_options = {
+  url: 'https://api.twitter.com/1.1/direct_messages/welcome_messages/new.json',
+  oauth: twitter_oauth,
+  json: true,
+  headers: {
+    'content-type': 'application/json'
+  },
+  body: wm_params
+}
 
+// POST request to create new Welcome Message
+request.post(request_options, function (error, response, body) {
+  
   if (error) {
     console.log('Error creating welcome message.');
     console.log(error);
     return;
   }
 
-  console.log(data);
+  console.log(body);
 
-  // get welcome message ID
-  var welcome_message_id = data.welcome_message.id;
+  var wm_rule_params = {
+    "welcome_message_rule": {
+      "welcome_message_id": body.welcome_message.id
+    }
+  }
 
-  // get user ID to construct deeplink
-  twitter.get('account/verify_credentials', {}, function (error, data, response) {
+  request_options = {
+    url: 'https://api.twitter.com/1.1/direct_messages/welcome_messages/rules/new.json',
+    oauth: twitter_oauth,
+    json: true,
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: wm_rule_params
+  }
 
+  // POST request to set Welcome Message as default
+  request.post(request_options, function (error, response, body) {
+    
     if (error) {
-      console.log('Error retreiving user data.');
+      console.log('Error creating welcome message rule.');
       console.log(error);
       return;
     }
 
-    // get the user ID
-    var user_id = data.id_str;
+    console.log(body);
+  })
+})
 
-    // construct deeplink to welcome message
-    console.log('Welcome Message Deeplink:', 'https://twitter.com/messages/compose?recipient_id=' + user_id + '&welcome_message_id=' + welcome_message_id)
-    
-    callback();
-  });
-  
-});
 
