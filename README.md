@@ -75,6 +75,16 @@ Starter web app for consuming events via Account Activity API.
 node example_scripts/webhook_management/trigger-crc-request.js
 ```
 
+
+## Example Scripts
+
+See the example scripts in the `example_scripts` directory to:
+
+* Send Direct Messages.
+* Manage webhook configs and subscriptions.
+* Setup Welcome Message deeplinks and defaults.
+
+
 ## Documentation
 * [Direct Message API](https://dev.twitter.com/webhooks)
 * [Account Activity API (webhook)](https://dev.twitter.com/rest/direct-messages)
