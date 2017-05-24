@@ -31,7 +31,7 @@ Starter web app for consuming events via Account Activity API.
 	```
 	node example_scripts/webhook_management/create-webhook-config.js 
 	```
-	Take node of returned `webhook_id`.
+	Take note of returned `webhook_id`.
 
 5. Add user subscription. Update `WEBHOOK_ID` in source code.
 
