@@ -26,7 +26,7 @@ var request_options = {
 request.post(request_options, function (error, response, body) {
 
   if (response.statusCode == 204) {
-    console.log('Subscription added.');
+    console.log('Subscription added.')
   } else {
     console.log('User has not authorized your app.')
   }

@@ -62,15 +62,15 @@ var request_options = {
 request.post(request_options, function (error, response, body) {
 
   if (error) {
-    console.log('Error creating welcome message.');
-    console.log(error);
+    console.log('Error creating welcome message.')
+    console.log(error)
     return;
   }
 
   // get welcome message ID
   var welcome_message_id = body.welcome_message.id;
 
-  console.log('Welcome Message created:', welcome_message_id);
+  console.log('Welcome Message created:', welcome_message_id)
 
   // update request options
   request_options = {
@@ -82,8 +82,8 @@ request.post(request_options, function (error, response, body) {
   request.get(request_options, function (error, response, body) {
 
     if (error) {
-      console.log('Error retreiving user data.');
-      console.log(error);
+      console.log('Error retreiving user data.')
+      console.log(error)
       return;
     }
 
@@ -91,8 +91,8 @@ request.post(request_options, function (error, response, body) {
     var user_id = JSON.parse(body).id_str;
 
     // construct deeplink to welcome message
-    var wm_deeplink = 'https://twitter.com/messages/compose?recipient_id=' + user_id + '&welcome_message_id=' + welcome_message_id;
+    var wm_deeplink = 'https://twitter.com/messages/compose?recipient_id=' + user_id + '&welcome_message_id=' + welcome_message_id
     
-    console.log('Use this link to deeplink to this Welecome Message:', wm_deeplink);
+    console.log('Use this link to deeplink to this Welecome Message:', wm_deeplink)
   })
 })

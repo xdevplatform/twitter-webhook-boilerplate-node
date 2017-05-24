@@ -24,9 +24,9 @@ var request_options = {
 request.get(request_options, function (error, response, body) {
 
   if (error) {
-    console.log('Error creating welcome message.');
-    console.log(error);
-    return;
+    console.log('Error creating welcome message.')
+    console.log(error)
+    return
   }
 
   var data = JSON.parse(body);
@@ -34,9 +34,9 @@ request.get(request_options, function (error, response, body) {
   // if welcome messages rule objects returned
   if (data.welcome_message_rules) {
     // get the ID of the rule
-    var welcome_message_rule_id = data.welcome_message_rules[0].id;
+    var welcome_message_rule_id = data.welcome_message_rules[0].id
 
-    console.log('Deleting current default welcome message:', welcome_message_rule_id);
+    console.log('Deleting current default welcome message:', welcome_message_rule_id)
 
     request_options = {
       url: 'https://api.twitter.com/1.1/direct_messages/welcome_messages/rules/destroy.json',
@@ -49,11 +49,11 @@ request.get(request_options, function (error, response, body) {
     // DELETE request to remove rule for default welcome message
     request.del(request_options, function (error, response, body) {
       if (error || response.statusCode != 204) {
-        console.log('Error deleting welcome message rule.');
-        console.log(error);
-        return;
+        console.log('Error deleting welcome message rule.')
+        console.log(error)
+        return
       } else {
-        console.log('Welcome message deleted.');
+        console.log('Welcome message deleted.')
       }
     });
   }

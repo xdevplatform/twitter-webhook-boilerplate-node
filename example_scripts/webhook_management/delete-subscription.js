@@ -26,7 +26,7 @@ var request_options = {
 request.delete(request_options, function (error, response, body) {
 
   if (response.statusCode == 204) {
-    console.log('Subscription removed.');
+    console.log('Subscription removed.')
   } else {
     console.log('User has not authorized your app or subscription not found.')
   }

@@ -13,6 +13,8 @@ var twitter_oauth = {
   token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
 }
 
+var WEBHOOK_URL = 'https://your-webhook-url'
+
 
 // request options
 var request_options = {
@@ -22,7 +24,7 @@ var request_options = {
     'Content-type': 'application/x-www-form-urlencoded'
   },
   form: {
-    url: 'https://twitter-webhook-node.herokuapp.com'
+    url: WEBHOOK_URL
   }
 }
 

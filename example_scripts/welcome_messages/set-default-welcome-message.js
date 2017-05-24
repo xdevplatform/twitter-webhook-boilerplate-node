@@ -62,9 +62,9 @@ var request_options = {
 request.post(request_options, function (error, response, body) {
   
   if (error) {
-    console.log('Error creating welcome message.');
-    console.log(error);
-    return;
+    console.log('Error creating welcome message.')
+    console.log(error)
+    return
   }
 
   console.log(body);
@@ -89,12 +89,12 @@ request.post(request_options, function (error, response, body) {
   request.post(request_options, function (error, response, body) {
     
     if (error) {
-      console.log('Error creating welcome message rule.');
-      console.log(error);
+      console.log('Error creating welcome message rule.')
+      console.log(error)
       return;
     }
 
-    console.log(body);
+    console.log(body)
   })
 })
 
