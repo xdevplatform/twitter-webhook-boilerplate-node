@@ -2,14 +2,13 @@
 
 Starter web app for consuming events via Account Activity API.
 
-___
 
 ## Dependencies
 
 * [Node.js](https://nodejs.org)
 * [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) (optional)
 
-___
+
 
 ## Setup & running the app
 
@@ -47,8 +46,6 @@ ___
 	node index
 	```
 
-___
-
 
 ## Deploy to Heroku (optional)
 
@@ -77,8 +74,6 @@ ___
 ```
 node example_scripts/webhook_management/trigger-crc-request.js
 ```
-___
-
 
 ## Documentation
 * [Direct Message API](https://dev.twitter.com/webhooks)
