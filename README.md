@@ -31,7 +31,7 @@ Starter web app for consuming events via Account Activity API.
 	```
 	node example_scripts/webhook_management/create-webhook-config.js 
 	```
-	Take node of returned `webhook_id`.
+	Take note of returned `webhook_id`.
 
 5. Add user subscription. Update `WEBHOOK_ID` in source code.
 
@@ -46,6 +46,13 @@ Starter web app for consuming events via Account Activity API.
 	node index
 	```
 
+## Example Scripts
+
+See the example scripts in the `example_scripts` directory to:
+
+* Send Direct Messages.
+* Manage webhook configs and subscriptions.
+* Setup Welcome Message deeplinks and defaults.
 
 ## Deploy to Heroku (optional)
 
@@ -75,6 +82,7 @@ Starter web app for consuming events via Account Activity API.
 node example_scripts/webhook_management/trigger-crc-request.js
 ```
 
+
 ## Documentation
-* [Direct Message API](https://dev.twitter.com/webhooks)
-* [Account Activity API (webhook)](https://dev.twitter.com/rest/direct-messages)
+* [Direct Message API](https://dev.twitter.com/rest/direct-messages)
+* [Account Activity API (webhook)](https://dev.twitter.com/webhooks)
