@@ -26,25 +26,36 @@ Starter web app for consuming events via Account Activity API.
 
 3. Create a `config.json` based on `config.sample.json` and fill in the Twitter keys and tokens.
 
-4. Create webhook config. Update `WEBHOOK_URL` in source code.
+4. Run locally:
+
+	```
+	node index
+	```
+	
+5. Deploy app. To deploy to Heroku see "Deploy to Heroku" instructions below.
+	
+	Take note of your webhook URL. For example: 
+	```
+	https://your.app.domain/webhooks/twitter
+	```
+	
+## Configure Webhook to Receive Events
+
+1. Create webhook config. Update `WEBHOOK_URL` in source code.
 
 	```
 	node example_scripts/webhook_management/create-webhook-config.js 
 	```
 	Take note of returned `webhook_id`.
 
-5. Add user subscription. Update `WEBHOOK_ID` in source code.
+2. Add user subscription. Update `WEBHOOK_ID` in source code.
 
 	```
 	node example_scripts/webhook_management/add-subscription.js 
 	```
 	Subscription will be created for user the context provided by the access tokens.
 
-6. Run locally
-
-	```
-	node index
-	```
+3. Test configuration by sending a DM to or from the subscribed account. You should receive a message event on your deployed webhook app.
 
 ## Example Scripts
 
