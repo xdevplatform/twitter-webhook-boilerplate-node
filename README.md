@@ -1,16 +1,26 @@
 # Twitter Webhook Boilerplate Node
 
-Starter web app for consuming events via Account Activity API.
+Starter web app for consuming events via Account Activity API (beta).
 
+[Apply here for beta access.](https://gnipinc.formstack.com/forms/account_activity_api_configuration_request_form)
 
 ## Dependencies
 
+* A Twitter app created on [apps.twitter.com](https://apps.twitter.com/)
 * [Node.js](https://nodejs.org)
 * [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) (optional)
 
+## Create and configure a Twitter app
 
+1. Create a Twitter app on [apps.twitter.com](https://apps.twitter.com/)
 
-## Setup & running the app
+2. On the **Permissions** tab > **Access** section > enable **Read, Write and Access direct messages**.
+
+3. On the **Keys and Access Tokens** tab > **Your Access Token** section > click **Create my access token" button**.
+
+4.  On the **Keys and Access Tokens** tab, take note of the `consumer key`, `consumer secret`, `access token` and `access token secret`.
+
+## Setup & running the web app
 
 1. Clone this repository:
 
@@ -24,7 +34,7 @@ Starter web app for consuming events via Account Activity API.
 	npm install
 	```
 
-3. Create a `config.json` based on `config.sample.json` and fill in the Twitter keys and tokens.
+3. Create a new `config.json` file based on `config.sample.json` and fill in your Twitter keys and tokens.
 
 4. Run locally:
 
