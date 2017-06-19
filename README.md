@@ -16,11 +16,11 @@ Starter web app for consuming events via Account Activity API (beta).
 
 2. On the **Permissions** tab > **Access** section > enable **Read, Write and Access direct messages**.
 
-3. On the **Keys and Access Tokens** tab > **Your Access Token** section > click **Create my access token" button**.
+3. On the **Keys and Access Tokens** tab > **Your Access Token** section > click **Create my access token** button.
 
 4.  On the **Keys and Access Tokens** tab, take note of the `consumer key`, `consumer secret`, `access token` and `access token secret`.
 
-## Setup & running the web app
+## Setup & run the Node.js web app
 
 1. Clone this repository:
 
@@ -49,7 +49,7 @@ Starter web app for consuming events via Account Activity API (beta).
 	https://your.app.domain/webhooks/twitter
 	```
 	
-## Configure Webhook to Receive Events
+## Configure webhook to receive events via the API
 
 1. Create webhook config. Update `WEBHOOK_URL` in source code.
 
