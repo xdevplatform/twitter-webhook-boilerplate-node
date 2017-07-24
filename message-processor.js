@@ -11,6 +11,11 @@ var mp = {}
  */
 mp.process = function (payload) {
 
+  // 1. Loop through all direct_message_events in payload
+  // 2. Check if event is a message_create event
+  // 3. Check if the message is incoming by ensuring the sender_id is not itself
+  // 4. Process event
+
   // check for direct message events
   if(payload.direct_message_events) {
 
@@ -34,12 +39,15 @@ mp.process = function (payload) {
  */
 function process_message_event (message_event) {
 
+  // 1. Check for a quick_reply_response object
+  // 2. Access the included metadata value
+  // 3. Get appropriate response for metadata
+  // 4. Send response
+
   console.log('Message recieved from:', message_event.message_create.sender_id)
   console.log(message_event.message_create.message_data)
 
   var metadata
-  var message_to_send
-  var sender_id
 
   // check for quick reply response
   if(message_event.message_create.message_data.quick_reply_response) {
@@ -49,16 +57,15 @@ function process_message_event (message_event) {
   }
   // user submitted free form messsage
   else {
-    var message_text = message_event.message_create.message_data.text
     metadata = 'default_message' 
   }
 
 
   // access sender of the message to reply to
-  sender_id = message_event.message_create.sender_id
+  var sender_id = message_event.message_create.sender_id
 
   // retrieve response for provided metadata
-  message_to_send = messages.get(metadata, sender_id)
+  var message_to_send = messages.get(metadata, sender_id)
 
   mp.send_message(message_to_send)
 }

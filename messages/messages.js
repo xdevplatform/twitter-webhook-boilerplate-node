@@ -25,7 +25,8 @@ messages.add = function (msg) {
  * @return json
  */
 messages.get = function (metadata_trigger, recipient_id) {
-  var msg = default_message
+
+  var msg = config.default_message
 
   if (message_events[metadata_trigger]) {
     msg = message_events[metadata_trigger]
@@ -41,6 +42,7 @@ messages.get = function (metadata_trigger, recipient_id) {
  *  Add all message files
  */
 config.messages_files.forEach(function (file_name) {
+  
   messages.add(require('./' + file_name + '.js'))
 })
 
