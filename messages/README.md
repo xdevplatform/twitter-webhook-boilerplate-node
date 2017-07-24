@@ -1,5 +1,5 @@
 # Messages
-This simple bot maps metadata values from Quick Reply response to messages the bot should respond with. If the bot cannot find a response for a provided metadata value or metadata is not provided, the bot will respond with a default message.
+This simple bot maps metadata values from Quick Reply responses to messages the bot should respond with. If the bot cannot find a response for a provided metadata value or metadata is not provided, the bot will respond with a default message.
 
 ## Configuring
 
