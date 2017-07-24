@@ -15,17 +15,17 @@ module.exports = {
               {
                 "label": "Option 1",
                 "description": "A short description for option 1",
-                "metadata": ""
+                "metadata": "feature_quick_reply_options_response"
               },
               {
                 "label": "Option 2",
                 "description": "A short description for option 2",
-                "metadata": ""
+                "metadata": "feature_quick_reply_options_response"
               },
               {
                 "label": "Option 3",
                 "description": "A short description for option 3",
-                "metadata": ""
+                "metadata": "feature_quick_reply_options_response"
               }
             ]
           }

@@ -2,8 +2,8 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var app = express()
 var security = require('./security')
-var message_processor = require('./message-processor.js')
-var twitter_config = require('./twitter-config.js')
+var message_processor = require('./message-processor')
+var twitter = require('./twitter')
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -15,7 +15,8 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
 
-console.log(twitter_config)
+console.log(twitter)
+
 
 /**
  * Serves the home page
@@ -24,9 +25,6 @@ app.get('/', function(request, response) {
   response.render('pages/index')
 })
 
-app.get('/foo', function(request, response) {
-  response.send(twitter_config)
-})
 
 /**
  * Receives challenge response check (CRC)
@@ -36,7 +34,7 @@ app.get('/webhooks/twitter', function(request, response) {
   var crc_token = request.query.crc_token
 
   if (crc_token) {
-    var hash = security.get_challenge_response(crc_token, twitter_config.oauth.consumer_secret)
+    var hash = security.get_challenge_response(crc_token, twitter.oauth.consumer_secret)
 
     response.status(200);
     response.send({
