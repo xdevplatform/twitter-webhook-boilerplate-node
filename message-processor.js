@@ -6,8 +6,8 @@ var mp = {}
 
 
 /**
- * Processes incomming events
- * @param  payload  the incomming webhook json payload
+ * Processes incoming events
+ * @param  payload  the incoming webhook json payload
  */
 mp.process = function (payload) {
 
@@ -17,7 +17,7 @@ mp.process = function (payload) {
     // loop through each event
     _.forEach(payload.direct_message_events, function(message_event) {
 
-      // check if event is a message_create event and if it is incomming by validating sender ID
+      // check if event is a message_create event and if it is incoming by validating sender ID
       if(message_event.type == 'message_create' && message_event.message_create.sender_id !== twitter.user_id) {
         
         // process each event individually

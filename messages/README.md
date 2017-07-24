@@ -34,7 +34,7 @@ When the bot cannot find a response for a message, it will respond with the mess
 
 	| Propety          | Description       |
 	|:------------------|:------------------|
-	| metadata_trigger | The metadata value on an incomming message that will trigger the message            |
+	| metadata_trigger | The metadata value on an incoming message that will trigger the message            |
 	| message_event    | A JSON representation of a [Direcet Message Event Object](https://dev.twitter.com/rest/direct-messages/direct-message-event). Set the `recipient_id` to `undefined`.
 	
 2. Add the module to `config.js` in the `messages_files` array. Exclude the `.js` extension.
