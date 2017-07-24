@@ -1,34 +1,13 @@
+var config = require('./config')
 var message_events = []
 var messages = {}
 
 
 // the default message
-var default_message = {
-  "event": {
-    "type": "message_create",
-    "message_create": {
-      "target": {
-        "recipient_id": undefined
-      },
-      "message_data": {
-        "text": "Sorry. My knwoledge of natural language is limited. To learn more about a feature, select an option below.",
-        "quick_reply": require('./fragment_demo_features_options')
-      }
-    }
-  }
-}
-
+var default_message = config.default_message
 
 // all message files
-var message_files = [
-  'feature_quick_reply_input',
-  'feature_quick_reply_input_response',
-  'feature_quick_reply_options',
-  'feature_quick_reply_options_response',
-  'feature_buttons',
-  'feature_location_sharing',
-  'feature_location_sharing_response',
-]
+var message_files = config.messages_files
 
 
 /**
