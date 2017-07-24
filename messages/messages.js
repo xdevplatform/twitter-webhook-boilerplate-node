@@ -1,13 +1,7 @@
 var config = require('./config')
+
 var message_events = []
 var messages = {}
-
-
-// the default message
-var default_message = config.default_message
-
-// all message files
-var message_files = config.messages_files
 
 
 /**
@@ -46,7 +40,7 @@ messages.get = function (metadata_trigger, recipient_id) {
 /**
  *  Add all message files
  */
-message_files.forEach(function (file_name) {
+config.messages_files.forEach(function (file_name) {
   messages.add(require('./' + file_name + '.js'))
 })
 
@@ -56,7 +50,7 @@ message_files.forEach(function (file_name) {
  */
 messages.add({
   metadata_trigge: 'default_message',
-  message_event: default_message
+  message_event: config.default_message
 })
 
 
