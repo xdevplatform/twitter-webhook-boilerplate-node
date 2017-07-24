@@ -3,7 +3,7 @@ This simple bot maps metadata values from Quick Reply responses to messages the 
 
 ## Configuring
 
-Messages are configure in `config.js`. In this file you can set the default message (for when the bots cannot find a response) as well as define all of the message responses for the bot.
+Messages are configured in `config.js`. In this file you can set the default message (for when the bots cannot find a response) as well as define all of the message responses for the bot.
 
 ### Setting the Default Message
 
