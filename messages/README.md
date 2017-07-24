@@ -12,8 +12,10 @@ When the bot cannot find a response for a message, it will respond with the mess
 ### Adding a Response
 
 1. Create a message module with the following strcuture in the `messages` folder. You may want to name the module file the same as the `metadata_trigger` property.
+  
+  **Module Definition**
 
-	~~~~
+  ~~~~
   module.exports = {
     metadata_trigger: 'option_1',
     message_event: {
@@ -30,12 +32,14 @@ When the bot cannot find a response for a message, it will respond with the mess
       }
     }
   }
-	~~~~
+  ~~~~
+  
+  **Module Properties**
 
-	| Propety          | Description       |
-	|:------------------|:------------------|
-	| metadata_trigger | The metadata value on an incomming message that will trigger the message            |
-	| message_event    | A JSON representation of a [Direcet Message Event Object](https://dev.twitter.com/rest/direct-messages/direct-message-event). Set the `recipient_id` to `undefined`.
+  | Property          | Description       |
+  |:------------------|:------------------|
+  | metadata_trigger  | The metadata value on an incomming message that will trigger the message. |
+  | message_event     | A JSON representation of a [Direcet Message Event Object](https://dev.twitter.com/rest/direct-messages/direct-message-event). Set the `recipient_id` to `undefined`. |
 	
 2. Add the module to `config.js` in the `messages_files` array. Exclude the `.js` extension.
 
