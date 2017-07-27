@@ -65,7 +65,7 @@ function receive_post(request, response) {
  * By default, this creates destinations in the format /webhooks/twitter/[webhook_number], where 
  * the webhook_number is a number from 1 to NUMBER_OF_WEBHOOKS in the config.
  **/
-for (var webhook_number = 1; webhook_number <= number_of_webhooks; webhook_number++) {
+for (var webhook_number = 0; webhook_number < number_of_webhooks; webhook_number++) {
   /**
    * Receives challenge response check (CRC)
    **/
