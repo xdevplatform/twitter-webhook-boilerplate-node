@@ -1,0 +1,4 @@
+{
+  "name" : "messages",
+  "main" : "./messages.js"
+}

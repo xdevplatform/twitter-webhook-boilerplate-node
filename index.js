@@ -1,9 +1,9 @@
 var express = require('express')
-var security = require('./security')
 var bodyParser = require('body-parser')
-var nconf = require('nconf')
 var app = express()
-
+var security = require('./security')
+var message_processor = require('./message-processor')
+var twitter = require('./twitter')
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -15,15 +15,7 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
 
-// load config
-nconf.file({ file: 'config.json' }).env();
-
-var twitter_config = {
-  consumer_key: nconf.get('TWITTER_CONSUMER_KEY'),
-  consumer_secret: nconf.get('TWITTER_CONSUMER_SECRET'),
-  access_token: nconf.get('TWITTER_ACCESS_TOKEN'),
-  access_token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
-}
+console.log(twitter)
 
 
 /**
@@ -41,11 +33,17 @@ app.get('/webhooks/twitter', function(request, response) {
 
   var crc_token = request.query.crc_token
 
-  var hash = security.get_challenge_response(crc_token, twitter_config.consumer_secret)
+  if (crc_token) {
+    var hash = security.get_challenge_response(crc_token, twitter.oauth.consumer_secret)
 
-  response.send({
-    response_token: 'sha256=' + hash
-  })
+    response.status(200);
+    response.send({
+      response_token: 'sha256=' + hash
+    })
+  } else {
+    response.status(400);
+    response.send('Error: crc_token missing from request.')
+  }
 })
 
 
@@ -54,12 +52,10 @@ app.get('/webhooks/twitter', function(request, response) {
  **/
 app.post('/webhooks/twitter', function(request, response) {
 
-  // Your custom bot logic will start here
-
-  console.log(request.body)
+  // replace this with your own bot logic
+  message_processor.process(request.body)
 
   response.send('200 OK')
-  
 })
 
 
