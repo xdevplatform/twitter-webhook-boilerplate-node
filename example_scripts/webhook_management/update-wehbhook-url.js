@@ -1,3 +1,13 @@
+/**
+ * UPDATE WEBHOOK STEPS
+ * 1. Retreive current webhook config
+ * 2. Remove subscription for user on current webhook config
+ * 3. Delete current webhook config
+ * 4. Create new webhook config with new URL
+ * 5. Add subscription for user
+ */
+
+
 var nconf = require('nconf')
 var request = require('request')
 
@@ -16,6 +26,9 @@ var twitter_oauth = {
 var WEBHOOK_URL = 'https://your-webhook-url'
 
 
+/**
+ * Retrieves webhook configuration
+ */
 function getConfig() {
   // request options
   var request_options = {
@@ -39,6 +52,10 @@ function getConfig() {
 }
 
 
+/**
+ * Removes existing subscription
+ * for user context of provided access tokens
+ */
 function removeSubscription(config_id) {
   // request options
   var request_options = {
@@ -46,7 +63,7 @@ function removeSubscription(config_id) {
     oauth: twitter_oauth
   }
 
-  // POST request to create webhook config
+  // DELETE request to remove subscription
   request.delete(request_options, function (error, response, body) {
 
     if (response.statusCode == 204) {
@@ -60,6 +77,9 @@ function removeSubscription(config_id) {
 }
 
 
+/**
+ * Deletes webhook configuration
+ */
 function deleteConfig(config_id) {
   // request options
   var request_options = {
@@ -67,7 +87,7 @@ function deleteConfig(config_id) {
     oauth: twitter_oauth
   }
 
-  // GET request to retreive webhook config
+  // DELETE request to delete webhook config
   request.del(request_options, function (error, response, body) {
     if (error || response.statusCode != 204) {
       console.log('Error deleting webhook config.')
@@ -80,6 +100,9 @@ function deleteConfig(config_id) {
 }
 
 
+/**
+ * Create new webhook configuration
+ */
 function createConfig() {
   // request options
   var request_options = {
@@ -107,6 +130,10 @@ function createConfig() {
 }
 
 
+/**
+ * Adds webhook subscription subscription
+ * for user context of provided access tokens
+ */
 function addSubscription(webhook_id) {
   // request options
   var request_options = {
@@ -124,5 +151,6 @@ function addSubscription(webhook_id) {
     }
   })
 }
+
 
 getConfig()
