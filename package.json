@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "body-parser": "^1.16.1",
-    "ejs": "2.4.1",
+    "ejs": "^2.5.7",
     "express": "4.13.3",
     "lodash": "^4.17.4",
     "nconf": "^0.8.4",
