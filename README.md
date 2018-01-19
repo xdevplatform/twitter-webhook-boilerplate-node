@@ -89,7 +89,7 @@ See the example scripts in the `example_scripts` directory to:
 	heroku local
 	```
 	
-3. Confgirue environment variables. Set up an environment variable for evey propertey on config.json. See Heroku doucmentations on [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars).
+3. Configure environment variables. Set up an environment variable for every property on config.json. See Heroku documentation on [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars).
 
 4. Deploy to Heroku.
 
@@ -97,7 +97,7 @@ See the example scripts in the `example_scripts` directory to:
 	git push heroku master
 	```
 
-**Note:** The free tier of Heroku will put your app to sleep after 30 minutes. On cold start, you app will have very high latency which may result in a CRC failure that deactivates your webhook. To trigger a CRC request and re-validate run the following script with your `WEBHOOK_ID`:
+**Note:** The free tier of Heroku will put your app to sleep after 30 minutes. On cold start, you app will have very high latency which may result in a CRC failure that deactivates your webhook. To trigger a CRC request and re-validate, run the following script with your `WEBHOOK_ID`:
 
 ```
 node example_scripts/webhook_management/trigger-crc-request.js
@@ -105,5 +105,5 @@ node example_scripts/webhook_management/trigger-crc-request.js
 
 
 ## Documentation
-* [Direct Message API](https://dev.twitter.com/rest/direct-messages)
-* [Account Activity API (webhook)](https://dev.twitter.com/webhooks)
+* [Direct Message API](https://developer.twitter.com/en/docs/direct-messages/api-features)
+* [Account Activity API (webhook)](https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview)
