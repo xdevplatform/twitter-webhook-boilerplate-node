@@ -2,7 +2,7 @@
 
 Starter web app for consuming events via Account Activity API (beta).
 
-[Apply here for beta access.](https://gnipinc.formstack.com/forms/account_activity_api_configuration_request_form)
+**Note:** This application is only compatible with the DM only version of the Account Activity API (beta).
 
 ## Dependencies
 
