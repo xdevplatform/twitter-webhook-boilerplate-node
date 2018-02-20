@@ -13,12 +13,11 @@ var twitter_oauth = {
   token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
 }
 
-var WEBHOOK_ID = 'your-webhook-id'
-
+var ENV_NAME = 'your-env-name'
 
 // request options
 var request_options = {
-  url: 'https://api.twitter.com/1.1/account_activity/webhooks/' + WEBHOOK_ID + '/subscriptions.json',
+  url: 'https://api.twitter.com/1.1/account_activity/' + ENV_NAME + '/subscriptions.json',
   oauth: twitter_oauth
 }
 
