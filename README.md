@@ -2,7 +2,7 @@
 
 Starter web app for consuming events via Account Activity API (beta).
 
-**Note:** This application is only compatible with the DM only version of the Account Activity API (beta).
+**Note:** This application is only compatible with the DM-only beta version of the Account Activity API. The DM-only beta will end on August 16, 2018 and this app will not longer be fully funcional. Please see [this project](https://github.com/twitterdev/account-activity-dashboard) for updated example code to get started with the Account Activity API.
 
 ## Dependencies
 
